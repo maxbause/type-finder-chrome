@@ -1,0 +1,28 @@
+{
+  "name": "Type Finder",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Finds Typescript type package when visiting a GitHub repository.",
+  "permissions": [
+    "https://github.com/*",
+    "https://registry.npmjs.org/*",
+    "tabs"
+  ],
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [{
+    "matches": ["https://github.com/*"],
+    "js": ["dist/inject.js"]
+  }],
+  "icons": {
+    "16": "assets/icons/16-icon.png",
+    "32": "assets/icons/32-icon.png",
+    "48": "assets/icons/48-icon.png",
+    "64": "assets/icons/64-icon.png",
+    "128": "assets/icons/128-icon.png",
+    "256": "assets/icons/256-icon.png",
+    "512": "assets/icons/512-icon.png",
+    "1024": "assets/icons/1024-icon.png"
+  }
+}

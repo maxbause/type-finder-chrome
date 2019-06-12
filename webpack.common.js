@@ -1,10 +1,12 @@
 module.exports = {
-  entry: "./src/main.ts",
+  entry: {
+    inject: "./src/inject.ts",
+    index: "./src/index.tsx",
+  },
   output: {
-    filename: "bundle.js",
     path: __dirname + "/dist"
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json"]
+    extensions: [".ts", ".tsx", ".js", ".json", "scss"]
   },
 };

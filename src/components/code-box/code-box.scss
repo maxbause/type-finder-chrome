@@ -1,0 +1,57 @@
+@import "../../colors.scss";
+@import "../../animations.scss";
+
+.code-box {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-sizing: border-box;
+
+  &__code {
+    position: relative;
+    background-color: $white-blue;
+    border-radius: 0.3rem;
+    padding: 1.5rem 1.2rem;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+    font-family: "Roboto-Mono";
+    font-size: 1.8rem;
+    color: $midnight;
+
+    &--bold {
+      font-weight: bold;
+    }
+
+    &--italic {
+      font-style: italic;
+    }
+
+    &--loading {
+      @include pulse-animation--white-blue;
+      height: 5.4rem;
+    }
+  }
+
+  &__copy {
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  &__info {
+    font-size: 1.6rem;
+    color: $gray;
+    font-style: italic;
+    box-sizing: border-box;
+
+    &--loading {
+      @include pulse-animation--gray;
+      width: 45%;
+      height: 1.6rem;
+      border-radius: 1.6rem;
+    }
+  }
+}

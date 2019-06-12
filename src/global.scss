@@ -1,0 +1,16 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+
+html {
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0 auto;
+  border: 1px solid $sky-blue;
+  width: 40rem;
+  height: 25rem;
+  font-size: 1.6rem;
+  font-family: "Roboto";
+}

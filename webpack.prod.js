@@ -15,6 +15,8 @@ module.exports = merge(common, {
   },
   module: {
     rules: [
+      { test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader", options: { publicPath: "dist/" } },
+      { test: /\.scss$/, use: [ "style-loader", "css-loader", "sass-loader" ] },
       { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
     ]
   }

@@ -1,0 +1,33 @@
+@import "./colors.scss";
+
+@mixin pulse-animation--white-blue {
+  @keyframes pulse-animation--white-blue {
+    0% {
+        background-color: rgba($white-blue, 1);
+    }
+    50% {
+        background-color: rgba($white-blue, 0.3);
+    }
+    100% {
+        background-color: rgba($white-blue, 1);
+    }
+  }
+
+  animation: pulse-animation--white-blue 1s infinite ease-in-out;
+}
+
+@mixin pulse-animation--gray {
+  @keyframes pulse-animation--gray {
+    0% {
+        background-color: rgba(218, 218, 218, 1);
+    }
+    50% {
+        background-color: rgba(218, 218, 218, 0.5);
+    }
+    100% {
+        background-color: rgba(218, 218, 218, 1);
+    }
+  }
+
+  animation: pulse-animation--gray 1s infinite ease-in-out;
+}
