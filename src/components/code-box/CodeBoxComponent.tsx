@@ -9,8 +9,6 @@ class CodeBoxComponent extends React.Component<ISearchResult & ISettings> {
     const codeClasses = ["code-box__code", "code-box__code--loading"];
     const infoClasses = ["code-box__info", "code-box__info--loading"];
 
-    console.log(this.props);
-
     if (this.props.packageState !== PackageState.LOADING) {
       codeClasses.pop();
       infoClasses.pop();
