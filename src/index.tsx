@@ -13,8 +13,8 @@ ReactDOM.render(
     <div>
       <NavigationComponent />
         <Switch>
-          <Route path="/foo" component={MainView} />
-          <Route exact path="/" component={SettingsView} />
+          <Route path="/" exact component={MainView} />
+          <Route path="/settings" component={SettingsView} />
         </Switch>
       <FooterComponent />
     </div>
