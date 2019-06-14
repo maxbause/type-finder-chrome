@@ -1,5 +1,4 @@
 import * as React from "react";
-import GithubAPI from "../api/github/githubAPI";
 import PackageResolver from "../package/packageResolver";
 import { IMessage, MessageTypes } from "../inject";
 import { INPMRegistryResult } from "../api/npm/npmApi";
@@ -18,7 +17,7 @@ export interface ISearchResult extends INPMRegistryResult {
 interface IState extends ISearchResult {}
 
 export default function withPackageResolver(WrappedComponent: React.ComponentClass<ISearchResult>): React.ComponentClass {
-  return class extends React.Component<{}, IState> {
+  return class extends React.Component<any, IState> {
     constructor(props: any) {
       super(props);
 
@@ -57,7 +56,7 @@ export default function withPackageResolver(WrappedComponent: React.ComponentCla
 
     public render() {
       return(
-        <WrappedComponent {...this.state} />
+        <WrappedComponent {...this.props} {...this.state} />
       );
     }
   }
