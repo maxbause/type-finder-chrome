@@ -49,7 +49,7 @@ class CodeBoxComponent extends React.Component<ISearchResult & ISettings> {
         );
       }
       case PackageState.FAILED: {
-        return <span className="code-box__code--italic">No type found.</span>;
+        return <span className="code-box__code--italic">No type definitions found.</span>;
       }
       default: {
         return "";
