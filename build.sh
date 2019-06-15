@@ -19,7 +19,7 @@ cp index.html build/index.html
 
 
 echo "[3/4] Compressing build"
-zip -r build/type_finder_chrome_extension.zip build/
+cd build/; zip -r type_finder_chrome_extension.zip *; cd ..;
 
 echo "[4/4] Cleaning up"
 rm -r build/dist/
