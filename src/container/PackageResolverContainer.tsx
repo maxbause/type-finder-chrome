@@ -1,5 +1,5 @@
 import * as React from "react";
-import PackageResolver from "../package/packageResolver";
+import PackageResolverProvider from "../package/packageResolverProvider";
 import { IMessage, MessageTypes } from "../inject";
 import { INPMRegistryResult } from "../api/npm/npmApi";
 
@@ -43,7 +43,7 @@ export default function withPackageResolver(WrappedComponent: React.ComponentCla
         };
         chrome.tabs.sendMessage(tabs[0].id, message, (message: IMessage<Location>) => {
           if (message && message.type === MessageTypes.SEND_LOCATION) {
-            const packageResolver = new PackageResolver(message.payload);
+            const packageResolver = new PackageResolverProvider(message.payload).getProvider;
             packageResolver.searchForType()
               .then((result) => {
                 this.setState(result);

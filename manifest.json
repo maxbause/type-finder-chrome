@@ -5,6 +5,7 @@
   "description": "Finds Typescript type package when visiting a GitHub repository.",
   "permissions": [
     "https://github.com/*",
+    "https://*.npmjs.com/*",
     "https://registry.npmjs.org/*",
     "tabs"
   ],
@@ -12,7 +13,7 @@
     "default_popup": "index.html"
   },
   "content_scripts": [{
-    "matches": ["https://github.com/*"],
+    "matches": ["https://github.com/*", "https://*.npmjs.com/*"],
     "js": ["dist/inject.js"]
   }],
   "icons": {

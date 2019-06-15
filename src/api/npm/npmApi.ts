@@ -6,7 +6,7 @@ export interface INPMRegistryResult {
   license: string;
 }
 
-export default class NPMApi{
+export default class NPMApi {
   public static async searchForTypeDef(packageName: string): Promise<INPMRegistryResult|undefined> {
     return new Promise(async (resolve) => {
       try {
