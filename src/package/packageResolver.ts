@@ -22,8 +22,9 @@ export default class PackageResolver {
       try {
         const containsTypescript = await this.gitProvider.containsTypescript();
         const packageName = await this.gitProvider.packageNameFromPackageJson();
+        const packageNameFromReadme = await this.gitProvider.packageNameFromReadme();
 
-        if (!packageName && containsTypescript) {
+        if (!packageName && !packageNameFromReadme && containsTypescript) {
           return resolve({
             packageName: "",
             latestVersion: "",
@@ -32,13 +33,14 @@ export default class PackageResolver {
           });
         }
 
-        if (!packageName) {
+        if (!packageName && !packageNameFromReadme) {
           return resolve(failedResponse);
         }
 
-        const npmSearchResult = await NPMApi.searchForTypeDef(packageName);
+        const npmSearchResultPackageJson = await NPMApi.searchForTypeDef(packageName);
+        const npmSearchResultReadme = await NPMApi.searchForTypeDef(packageNameFromReadme);
 
-        if (!npmSearchResult && containsTypescript) {
+        if (!npmSearchResultPackageJson && !npmSearchResultReadme && containsTypescript) {
           return resolve({
             packageName: "",
             latestVersion: "",
@@ -47,13 +49,13 @@ export default class PackageResolver {
           });
         }
 
-        if (!npmSearchResult) {
+        if (!npmSearchResultPackageJson && !npmSearchResultReadme) {
           return resolve(failedResponse);
         }
 
         return resolve({
           packageState: PackageState.FOUND,
-          ...npmSearchResult
+          ...(npmSearchResultPackageJson ? npmSearchResultPackageJson : npmSearchResultReadme),
         });
       } catch {
         resolve(failedResponse);
