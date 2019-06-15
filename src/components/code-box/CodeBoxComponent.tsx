@@ -38,7 +38,7 @@ class CodeBoxComponent extends React.Component<ISearchResult & ISettings> {
   private codeBoxText() {
     switch(this.props.packageState) {
       case PackageState.INCLUDED: {
-        return <span className="code-box__code--italic">This package already includes a type definition.</span>
+        return <span className="code-box__code--italic">This package already includes type definitions.</span>
       }
       case PackageState.FOUND: {
         return (
