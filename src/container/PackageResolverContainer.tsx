@@ -30,25 +30,29 @@ export default function withPackageResolver(WrappedComponent: React.ComponentCla
     }
 
     public componentWillMount() {
+      const failedResponse = {
+        packageState: PackageState.FAILED,
+        packageName: "",
+        latestVersion: "",
+        license: "",
+      };
+
       chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
         const message: IMessage<any> = {
           type: MessageTypes.REQUEST_LOCATION,
         };
         chrome.tabs.sendMessage(tabs[0].id, message, (message: IMessage<Location>) => {
-          if (message.type === MessageTypes.SEND_LOCATION) {
+          if (message && message.type === MessageTypes.SEND_LOCATION) {
             const packageResolver = new PackageResolver(message.payload);
             packageResolver.searchForType()
               .then((result) => {
                 this.setState(result);
               })
               .catch(() => {
-                this.setState({
-                  packageState: PackageState.FAILED,
-                  packageName: "",
-                  latestVersion: "",
-                  license: "",
-                });
+                this.setState(failedResponse);
               });
+          } else {
+            this.setState(failedResponse);
           }
         });
       });
