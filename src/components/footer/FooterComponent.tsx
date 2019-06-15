@@ -7,8 +7,8 @@ class FooterComponent extends React.Component<RouteComponentProps<any>> {
     return (
       <footer className="footer">
         <ul className="footer__list">
-          <li className="footer__item" key="donate"><span>💸</span></li>
-          <li className="footer__item" key="repo"><span>🔌</span></li>
+          <li className="footer__item" key="donate"><a href="https://ko-fi.com/maxbause" target="_blank">💸</a></li>
+          <li className="footer__item" key="repo"><a href="https://github.com/maxbause/type-finder-chrome" target="_blank">🔌</a></li>
           <li className="footer__item" key="settings"><span onClick={this.props.history.push.bind(this, "/settings")}>️⚙️</span></li>
         </ul>
       </footer>
