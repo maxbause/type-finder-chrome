@@ -10,6 +10,9 @@ jobs:
     - yarn --version
     - yarn audit
   - stage: build
+    branches:
+    only:
+      - master
     sudo: required
     before_install:
     - npm install -g yarn
