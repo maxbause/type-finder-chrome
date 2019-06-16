@@ -7,7 +7,6 @@ jobs:
     cache:
       yarn: true
     script:
-      - zip -v
       - yarn --version
       - yarn audit
   - stage: build
