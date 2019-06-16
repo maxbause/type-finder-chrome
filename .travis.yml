@@ -10,7 +10,7 @@ jobs:
     - yarn --version
     - yarn audit
   - stage: build
-    if: branch = master
+    if: branch = master && type = pull_request
     sudo: required
     before_install:
     - npm install -g yarn
