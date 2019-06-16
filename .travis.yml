@@ -1,7 +1,3 @@
-language: node_js
-node_js:
-  - "12"
-
 jobs:
   include:
     - stage: cve
@@ -13,4 +9,6 @@ jobs:
         - sudo apt-get install -y -qq yarn
       cache:
         yarn: true
-      script: bash -c "yarn --version; yarn audit"
+      script:
+        - yarn --version
+        - yarn audit
