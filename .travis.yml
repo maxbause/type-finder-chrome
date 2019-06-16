@@ -3,23 +3,23 @@ jobs:
   - stage: cve
     sudo: required
     before_install:
-    - npm install -g yarn
+      - npm install -g yarn
     cache:
       yarn: true
     script:
-    - yarn --version
-    - yarn audit
+      - yarn --version
+      - yarn audit
   - stage: build
     if: branch = master && type = push
     sudo: required
     before_install:
-    - npm install -g yarn
+      - npm install -g yarn
     cache:
       yarn: true
     script:
-    - ".travis/build.sh"
+      - ".travis/build.sh"
     after_success:
-    - ".travis/push.sh"
+      - ".travis/push.sh"
 env:
   matrix:
     secure: l+kqLOZ6oi7s2WD4OQ1ZqEHCmbK9isMV8/jQX7Pg+rRh1bri0DzO7hAw1z1unC/DccAXfllePNAIGrsX0hEMzC3KGEKdHC+lqso0WDjfetLU2zEc8o/YYbZ+NWJTCGXb51cZaodEcY0CWAaTZTK1oU+IxB6iZHVCVbjD4oTtCpwi13Esk5uaexRpBZSmprfqIE0fcNtRvpmpUscnz78sqqQdJUMTSyJxSP9tW5Iz8eJKNT7zZAQ6ecf/wzLpuPLVeiXhT6X3J8fYtZa8r3MYGHVXfrfDG+BkxwTgTp83t7fVxg/3Bo6SGDNMuMxlol61fNICMdS6l25WSiVq3CTBIydFkKCjUmTl3NjOQuyfVLn+ax8fDIgkJfJKdVDRtg49fv9c+7nA0V6wz/6k7vNeV8egg3eT3+tYSs3TiLpv7c890aX70FndVXm/mE2bIDw0AEpZDjAg4HsezmgKHuPlhtaOq4VyQgXkKecdq1IXqRJH5iz1ofzttaL6raT+nomHcMVtNaLGLHEu1UpjciFjnSFtTWavjxFdd6r1gJoVA4AoVAGQkeVQrOO33gQRClgJAN0n8TNO4vyfqSQkEXA4dJ0nowAoHq9NPsjT0xMaKLI5RCUVUUhtuOQtoAG7btUmY7nlfOZCveOWYKs7la/kHfmNM0GDrvOs/llIDwF7KuA=
