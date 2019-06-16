@@ -60,7 +60,7 @@ class CodeBoxComponent extends React.Component<ISearchResult & ISettings> {
   private cliPrefix(): string {
     switch (this.props.packageCLI) {
       case "npm": {
-        return "npm install --save-dev "
+        return "npm i --save-dev "
       }
       default: {
         return "yarn add -D "
