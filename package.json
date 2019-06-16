@@ -1,11 +1,11 @@
 {
-  "name": "webpack-typescript-boilerplate",
-  "version": "1.0.0",
+  "name": "type-finder-chrome",
+  "version": "1.0.2",
   "main": "dist/bundle.js",
   "author": "Max Bause",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maxbause/webpack-typescript-boilerplate"
+    "url": "https://github.com/maxbause/type-finder-chrome/"
   },
   "license": "MIT",
   "devDependencies": {
