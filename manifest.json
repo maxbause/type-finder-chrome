@@ -1,6 +1,6 @@
 {
   "name": "Type Finder",
-  "version": "0.0.0.2",
+  "version": "1.0.2",
   "manifest_version": 2,
   "description": "This extension will automatically search for TypeScript type definitions on GitHub and npmjs.com.",
   "permissions": [
