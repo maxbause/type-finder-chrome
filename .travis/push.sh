@@ -13,7 +13,7 @@ commit_website_files() {
 
 upload_files() {
   git remote add origin-release https://${GH_TOKEN}@github.com/maxbause/type-finder-chrome.git > /dev/null 2>&1
-  git push --quiet --set-upstream origin-release release
+  git push --force --quiet --set-upstream origin-release release
 }
 
 setup_git
