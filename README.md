@@ -6,5 +6,5 @@
 
 Type Finder will find the right TypeScript type definition based on the GitHub repository or NPM package site you are visiting.
 
-![screenshot](https://raw.githubusercontent.com/maxbause/type-finder-chrome/feature/master/.github/screenshot.png)
-[![download](https://raw.githubusercontent.com/maxbause/type-finder-chrome/feature/master/.github/chrome-download.png)](https://chrome.google.com/webstore/detail/type-finder/mighnjfpkfpcgiipmaojaemdklenbnhg)
+![screenshot](https://raw.githubusercontent.com/maxbause/type-finder-chrome/master/.github/screenshot.png)
+[![download](https://raw.githubusercontent.com/maxbause/type-finder-chrome/master/.github/chrome-download.png)](https://chrome.google.com/webstore/detail/type-finder/mighnjfpkfpcgiipmaojaemdklenbnhg)
